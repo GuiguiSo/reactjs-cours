@@ -1,6 +1,9 @@
 import React from 'react'
 import './App.css'
 import Casino from '../components/casino'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import Button from 'react-bootstrap/Button';
+
 
 class App extends React.Component {
 
@@ -27,7 +30,9 @@ class App extends React.Component {
         {
           this.state.user.map((user,i) => <p key={i}>{user}</p>)
         }
-        <Casino casinos = {[{name: 'Monsupercasino', url:'httpmdr'}, {name: 'Moncasino', url:'httpmdr'}]}></Casino>
+        <Casino casinos = {[{name: 'Monsupercasino', url:'httpmdr'}, {name: 'Moncasino', url:'httplolmdr'}]}></Casino>
+        <Button variant="danger">Link</Button>{' '}
+        <Button variant="primary">Primary</Button>
       </div> 
     );
   }
