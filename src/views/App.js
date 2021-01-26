@@ -1,22 +1,21 @@
 import React from 'react'
 import './App.css'
-import Casino from '../components/casino'
+import Footer from '../components/Footer'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 class App extends React.Component {
 
   constructor(props){
     super(props)
 
-    this.state = { 
-      user: ['A','B','C'],
-      name : 'Guillaume'
+    this.state = {
     }
   }
 
   componentDidMount(){
     console.log(this.state.name)
     this.setState({
-      name : 'Guillaume Le tricheur'
+
     }, () => console.log('call back :' , this.state.name))
 
   }
@@ -24,10 +23,9 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        {
-          this.state.user.map((user,i) => <p key={i}>{user}</p>)
-        }
-        <Casino casinos = {[{name: 'Monsupercasino', url:'httpmdr'}, {name: 'Moncasino', url:'httpmdr'}]}></Casino>
+        <Footer>
+
+        </Footer>
       </div> 
     );
   }
