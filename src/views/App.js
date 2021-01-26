@@ -1,35 +1,36 @@
 import React from 'react'
 import './App.css'
-import Casino from '../components/casino'
+import Cards from '../components/Cards'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 class App extends React.Component {
 
   constructor(props){
     super(props)
 
-    this.state = { 
-      user: ['A','B','C'],
-      name : 'Guillaume'
+    this.state = {
+      card: [{
+        Img: "img/raccoon.jpg",
+        Title: 'Card Title',
+        Text: "Some quick example text to build on the card title and make up the bulk of the card's content."
+      },{
+        Img: "img/raccoon.jpg",
+        Title: 'Card Title2',
+        Text: "2Some quick example text to build on the card title and make up the bulk of the card's content."
+      }],
     }
-  }
-
-  componentDidMount(){
-    console.log(this.state.name)
-    this.setState({
-      name : 'Guillaume Le tricheur'
-    }, () => console.log('call back :' , this.state.name))
 
   }
 
   render() {
     return (
-      <div className="App">
-        {
-          this.state.user.map((user,i) => <p key={i}>{user}</p>)
-        }
-        <Casino casinos = {[{name: 'Monsupercasino', url:'httpmdr'}, {name: 'Moncasino', url:'httpmdr'}]}></Casino>
-      </div> 
-    );
+        <div className={"app"}>
+          {this.state.card.map((c,i) => <div key={i}>
+            <Cards card = {c}></Cards>
+          </div>)}
+        </div>
+
+  );
   }
 
 }
